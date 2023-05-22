@@ -63,13 +63,15 @@ class Movie
   public $title;
   public $filmDuration;
   public $year;
+  public $genresArray;  
 
   //* definire un construttore
-  public function __construct($_title, $_filmDuration, $_year)
+  public function __construct($_title, $_filmDuration, $_year, $_genresArray)
   {
     $this->title = $_title;
     $this->filmDuration = $_filmDuration;
     $this->year = $_year;
+    $this->genresArray = $_genresArray;
     //*inserito metodo nella classe
     $this->getMovieDetails();
   }
@@ -77,7 +79,13 @@ class Movie
   //* dichiarato un metodo 
   public function getMovieDetails()
   {
-    return "Titolo film: $this->title <br> Durata: $this->filmDuration <br> Anno: $this->year";
+    //* essendo un array deve essere trasformato prima in stringa e successivamente stampato
+    $genreString = implode(", ", $this->genresArray);
+    // OPPURE
+    // $genreString = join(", ", $this->genresArray);
+    return "Titolo film: $this->title <br> Durata: $this->filmDuration <br> Anno: $this->year <br> Generi: $genreString";
+    // senza generi/genres
+    // return "Titolo film: $this->title <br> Durata: $this->filmDuration <br> Anno: $this->year";
     // OPPURE
     // return 'Titolo film:' . ' ' . $this->title . ' ' . 'Durata:' . ' ' . $this->filmDuration . ' ' . 'Anno:' . ' ' . $this->year;
   }
@@ -85,7 +93,7 @@ class Movie
 
 //* INVOCARE attributi/variabili d’istanza
 // Iron Man
-$ironMan = new Movie("Iron Man", "2h 5m", "2008");
+$ironMan = new Movie("Iron Man", "2h 5m", "2008", ["Azione", "Fantascienza"]);
 //? COSì NON FUNZIONA SE C'è IL __construct
 // $ironMan->title = "Iron Man";
 // $ironMan->filmDuration = "2h 5m";
@@ -95,7 +103,7 @@ var_dump($ironMan);
 var_dump($ironMan->title);
 
 // Thor
-$thor = new Movie("Thor", "1h 54m", "2011");
+$thor = new Movie("Thor", "1h 54m", "2011", ["Azione", "Avventura", "Fantasy"]);
 //? COSì NON FUNZIONA SE C'è IL __construct
 // $thor->title = "Thor";
 // $thor->filmDuration = "1h 54m";
@@ -105,7 +113,7 @@ var_dump($thor);
 var_dump($thor->filmDuration);
 
 // Avengers: Endgame
-$endgame = new Movie("Avengers: Endgame", "3h 2m", "2019");
+$endgame = new Movie("Avengers: Endgame", "3h 2m", "2019", ["Azione", "Fantascienza", "Supereroi"]);
 //? COSì NON FUNZIONA SE C'è IL __construct
 // $endgame->title = "Avengers: Endgame";
 // $endgame->filmDuration = "3h 2m";
