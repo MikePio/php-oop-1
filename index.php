@@ -1,34 +1,6 @@
 <?php
 
-//* definire una classe
-class Movie{
-  public $title;
-  public $filmDuration;
-  public $year;
-}
-
-//* Dichiarati attributi/variabili d’istanza
-$ironMan = new Movie();
-$ironMan->title = "Iron Man";
-$ironMan->filmDuration = "2h 5m";
-$ironMan->year = "2008";
-
-var_dump($ironMan);
-
-$thor = new Movie();
-$thor->title = "Thor";
-$thor->filmDuration = "1h 54m";
-$thor->year = "2011";
-
-var_dump($thor);
-
-$endgame = new Movie();
-$endgame->title = "Avengers: Endgame";
-$endgame->filmDuration = "3h 2m";
-$endgame->year = "2019";
-
-var_dump($endgame);
-
+//* DATI
 // Iron Man
 // 2h 5m
 // 2008
@@ -40,15 +12,106 @@ var_dump($endgame);
 //Avengers: Endgame
 //3h 2m
 //2019 
-//
-//
+
+//! ESERCIZIO PARTE 1   Dichiarare attributi/variabili d’istanza
+
+// //* definire una classe
+// class Movie{
+//   public $title;
+//   public $filmDuration;
+//   public $year;
+// }
+
+// //* Dichiarati attributi/variabili d’istanza
+// // Iron Man
+// $ironMan = new Movie();
+// $ironMan->title = "Iron Man";
+// $ironMan->filmDuration = "2h 5m";
+// $ironMan->year = "2008";
+
+// var_dump($ironMan);
+
+// var_dump($ironMan->title);
+
+// // Thor
+// $thor = new Movie();
+// $thor->title = "Thor";
+// $thor->filmDuration = "1h 54m";
+// $thor->year = "2011";
+
+// var_dump($thor);
+
+// var_dump($thor->filmDuration);
+
+// // Avengers: Endgame
+// $endgame = new Movie();
+// $endgame->title = "Avengers: Endgame";
+// $endgame->filmDuration = "3h 2m";
+// $endgame->year = "2019";
+
+// var_dump($endgame);
+
+// var_dump($endgame->year);
+
+
+//! ESERCIZIO PARTE 2      definire un construttore
+
+
+//* definire una classe
+class Movie{
+  public $title;
+  public $filmDuration;
+  public $year;
+
+  //* definire un construttore
+  public function __construct($_title , $_filmDuration , $_year){
+    $this->title = $_title;
+    $this->filmDuration = $_filmDuration;
+    $this->year = $_year;
+  }
+
+}
+
+//* INVOCARE attributi/variabili d’istanza
+// Iron Man
+$ironMan = new Movie("Iron Man", "2h 5m", "2008");
+//? COSì NON FUNZIONA SE C'è IL __construct
+// $ironMan->title = "Iron Man";
+// $ironMan->filmDuration = "2h 5m";
+// $ironMan->year = "2008";
+
+var_dump($ironMan);
+
+var_dump($ironMan->title);
+
+// Thor
+$thor = new Movie("Thor", "1h 54m", "2011");
+//? COSì NON FUNZIONA SE C'è IL __construct
+// $thor->title = "Thor";
+// $thor->filmDuration = "1h 54m";
+// $thor->year = "2011";
+
+var_dump($thor);
+
+var_dump($thor->filmDuration);
+
+// Avengers: Endgame
+$endgame = new Movie("Avengers: Endgame", "3h 2m", "2019");
+//? COSì NON FUNZIONA SE C'è IL __construct
+// $endgame->title = "Avengers: Endgame";
+// $endgame->filmDuration = "3h 2m";
+// $endgame->year = "2019";
+
+var_dump($endgame);
+
+var_dump($endgame->year);
 
 
 
 
 
+?> 
 
-?>
 
 
 
