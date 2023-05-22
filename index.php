@@ -1,16 +1,33 @@
 <?php
 
-// definire una classe
+//* definire una classe
 class Movie{
   public $title;
   public $filmDuration;
   public $year;
 }
 
-// attributi/variabili d’istanza
-// var_dump(Movie);
+//* Dichiarati attributi/variabili d’istanza
+$ironMan = new Movie();
+$ironMan->title = "Iron Man";
+$ironMan->filmDuration = "2h 5m";
+$ironMan->year = "2008";
 
+var_dump($ironMan);
 
+$thor = new Movie();
+$thor->title = "Thor";
+$thor->filmDuration = "1h 54m";
+$thor->year = "2011";
+
+var_dump($thor);
+
+$endgame = new Movie();
+$endgame->title = "Avengers: Endgame";
+$endgame->filmDuration = "3h 2m";
+$endgame->year = "2019";
+
+var_dump($endgame);
 
 // Iron Man
 // 2h 5m
