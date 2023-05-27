@@ -60,14 +60,16 @@
 //* definire una classe
 class Movie
 {
+  public $poster;
   public $title;
   public $filmDuration;
   public $year;
-  public $genresArray;  
+  public $genresArray;
 
   //* definire un construttore
-  public function __construct($_title, $_filmDuration, $_year, $_genresArray)
+  public function __construct($_poster, $_title, $_filmDuration, $_year, $_genresArray)
   {
+    $this->poster = $_poster;
     $this->title = $_title;
     $this->filmDuration = $_filmDuration;
     $this->year = $_year;
@@ -75,7 +77,7 @@ class Movie
     //*inserito metodo nella classe
     $this->getMovieDetails();
   }
-  
+
   //* dichiarato un metodo 
   public function getMovieDetails()
   {
@@ -89,44 +91,71 @@ class Movie
     // OPPURE
     // return 'Titolo film:' . ' ' . $this->title . ' ' . 'Durata:' . ' ' . $this->filmDuration . ' ' . 'Anno:' . ' ' . $this->year;
   }
+
+  public function getPoster()
+  {
+    echo $this->poster;
+  }
+  public function getTitle()
+  {
+    echo $this->title;
+  }
+  public function getFilmDuration()
+  {
+    echo $this->filmDuration;
+  }
+  public function getYear()
+  {
+    echo $this->year;
+  }
 }
 
 //* INVOCARE attributi/variabili d’istanza
 // Iron Man
-$ironMan = new Movie("Iron Man", "2h 5m", "2008", ["Azione", "Fantascienza"]);
+// $ironMan = new Movie("Iron Man", "2h 5m", "2008", ["Azione", "Fantascienza"]);
 //? COSì NON FUNZIONA SE C'è IL __construct
 // $ironMan->title = "Iron Man";
 // $ironMan->filmDuration = "2h 5m";
 // $ironMan->year = "2008";
 
-var_dump($ironMan);
-var_dump($ironMan->title);
+//*stampo in pagina
+// var_dump($ironMan);
+// var_dump($ironMan->title);
 
 // Thor
-$thor = new Movie("Thor", "1h 54m", "2011", ["Azione", "Avventura", "Fantasy"]);
+// $thor = new Movie("Thor", "1h 54m", "2011", ["Azione", "Avventura", "Fantasy"]);
 //? COSì NON FUNZIONA SE C'è IL __construct
 // $thor->title = "Thor";
 // $thor->filmDuration = "1h 54m";
 // $thor->year = "2011";
 
-var_dump($thor);
-var_dump($thor->filmDuration);
+//*stampo in pagina
+// var_dump($thor);
+// var_dump($thor->filmDuration);
 
 // Avengers: Endgame
-$endgame = new Movie("Avengers: Endgame", "3h 2m", "2019", ["Azione", "Fantascienza", "Supereroi"]);
+// $endgame = new Movie("Avengers: Endgame", "3h 2m", "2019", ["Azione", "Fantascienza", "Supereroi"]);
 //? COSì NON FUNZIONA SE C'è IL __construct
 // $endgame->title = "Avengers: Endgame";
 // $endgame->filmDuration = "3h 2m";
 // $endgame->year = "2019";
 
-var_dump($endgame);
-var_dump($endgame->year);
+//*stampo in pagina
+// var_dump($endgame);
+// var_dump($endgame->year);
 
 //* stampare un metodo
-var_dump($ironMan->getMovieDetails());
-var_dump($thor->getMovieDetails());
-var_dump($endgame->getMovieDetails());
+// var_dump($ironMan->getMovieDetails());
+// var_dump($thor->getMovieDetails());
+// var_dump($endgame->getMovieDetails());
 
+//* array dei film
+$movies = [
+  new Movie("img/ironman.jpg", "Iron Man", "2h 5m", "2008", ["Azione", "Fantascienza"]),
+  new Movie("img/thor.jpg", "Thor", "1h 54m", "2011", ["Azione", "Avventura", "Fantasy"]),
+  new Movie("img/endgame.jpg", "Avengers: Endgame", "3h 2m", "2019", ["Azione", "Fantascienza", "Supereroi"])
+
+]
 
 
 ?>
@@ -153,8 +182,29 @@ var_dump($endgame->getMovieDetails());
 
 <body class="bg-dark text-white">
 
+<div class="container d-flex flex-wrap align-items-center justify-content-between">
+
+  <?php foreach($movies as $movie) : ?>
+    <!-- //* stampare con un ciclo foreach -->
+    <div class="text-black" style="width: 275px;">
+      <div class="card">
+        <img src="<?php $movie->getPoster()?>" class="card-img-top" alt="<?php $movie->getTitle() ?>" style="height: 405px;">
+        <div class="card-body">
+          <h5 class="card-title"><?php $movie->getTitle() ?></h5>
+          <p class="card-text mb-2">Durata: <?php $movie->getFilmDuration() ?></p>
+          <p class="card-text ">Anno: <?php $movie->getYear() ?></p>
+        </div>
+      </div>
+    </div>
+  <?php endforeach; ?>
+
+</div>
+
+
+
+
   <!-- //* stampare un metodo in pagina -->
-  <div class="alert alert-primary my-3 mx-3" role="alert">
+  <!-- <div class="alert alert-primary my-3 mx-3" role="alert">
   <?php echo ($ironMan->getMovieDetails()); ?>
   </div>
 
@@ -164,15 +214,11 @@ var_dump($endgame->getMovieDetails());
 
   <div class="alert alert-primary my-3 mx-3" role="alert">
   <?php echo ($endgame->getMovieDetails()); ?>
-  </div>
+  </div> -->
 
 
 
-  <?php
 
-
-
-  ?>
 
 
 </body>
