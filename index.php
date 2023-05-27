@@ -180,47 +180,62 @@ $movies = [
   <title>PHP OOP-1</title>
 </head>
 
-<body class="bg-dark text-white">
+<body class="bg-white text-white">
+  <!-- <body class="bg-dark text-white"> -->
 
-<div class="container d-flex flex-wrap align-items-center justify-content-between">
+  <header class="bg-dark text-white text-center py-5">
+    <h1>Marvel Movies</h1>
+  </header>
 
-  <?php foreach($movies as $movie) : ?>
-    <!-- //* stampare con un ciclo foreach -->
-    <div class="text-black" style="width: 275px;">
-      <div class="card">
-        <img src="<?php $movie->getPoster()?>" class="card-img-top" alt="<?php $movie->getTitle() ?>" style="height: 405px;">
-        <div class="card-body">
-          <h5 class="card-title"><?php $movie->getTitle() ?></h5>
-          <p class="card-text mb-2">Durata: <?php $movie->getFilmDuration() ?></p>
-          <p class="card-text ">Anno: <?php $movie->getYear() ?></p>
+  <div class="container d-flex flex-wrap align-items-center justify-content-between my-5">
+
+    <?php foreach ($movies as $movie) : ?>
+      <!-- //* stampare con un ciclo foreach -->
+      <div class="text-black my-3" style="width: 275px;">
+        <div class="card">
+          <img src="<?php $movie->getPoster() ?>" class="card-img-top" alt="<?php $movie->getTitle() ?>" style="height: 405px;">
+          <div class="card-body">
+            <h5 class="card-title"><?php $movie->getTitle() ?></h5>
+            <p class="card-text mb-2">Durata: <?php $movie->getFilmDuration() ?></p>
+            <p class="card-text ">Anno: <?php $movie->getYear() ?></p>
+          </div>
         </div>
       </div>
-    </div>
-  <?php endforeach; ?>
+    <?php endforeach; ?>
 
-</div>
-
-
+  </div>
 
 
   <!-- //* stampare un metodo in pagina -->
   <!-- <div class="alert alert-primary my-3 mx-3" role="alert">
-  <?php echo ($ironMan->getMovieDetails()); ?>
+  <?php
+  // echo ($ironMan->getMovieDetails()); 
+  ?>
   </div>
 
   <div class="alert alert-primary my-3 mx-3" role="alert">
-  <?php echo ($thor->getMovieDetails()); ?>
+  <?php
+  // echo ($thor->getMovieDetails()); 
+  ?>
   </div>
 
   <div class="alert alert-primary my-3 mx-3" role="alert">
-  <?php echo ($endgame->getMovieDetails()); ?>
+  <?php
+  // echo ($endgame->getMovieDetails()); 
+  ?>
   </div> -->
 
 
-
+  <footer class="bg-dark text-white text-center py-5">
+    <a href="https://github.com/MikePio" style="color:white;">
+      <div>By MikePi</div>
+    </a>
+  </footer>
 
 
 
 </body>
+
+
 
 </html>
