@@ -8,12 +8,9 @@ class Genre{
     $this->name = $_name;
   }
 
-
+    public function getName()
+  {
+    echo $this->name;
+  }
 
 }
-
-
-
-
-
-?>

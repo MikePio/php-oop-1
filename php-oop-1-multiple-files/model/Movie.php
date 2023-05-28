@@ -9,16 +9,16 @@ class Movie
   public $title;
   public $filmDuration;
   public $year;
-  public $genre;
+  public $genres;
 
   //* definire un construttore
-  public function __construct($_poster, $_title, $_filmDuration, $_year, Genre $_genre)
+  public function __construct($_poster, $_title, $_filmDuration, $_year, $_genres)
   {
     $this->poster = $_poster;
     $this->title = $_title;
     $this->filmDuration = $_filmDuration;
     $this->year = $_year;
-    $this->genre = $_genre;
+    $this->genres = $_genres;
     //*inserito metodo nella classe
     $this->getMovieDetails();
   }
@@ -53,10 +53,11 @@ class Movie
   {
     echo $this->year;
   }
-  public function getGenreName()
-  {
-    echo $this->genre->name;
-  }
+  //* Stampare un sinoglo genere
+  // public function getGenreName()
+  // {
+  //   echo $this->genre->name;
+  // }
 }
 
 ?>
