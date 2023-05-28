@@ -108,6 +108,12 @@ class Movie
   {
     echo $this->year;
   }
+  //* STAMAPRE I GENERI CONTENUTI IN UN ARRAY
+  public function getGenre()
+  {
+    $genreString = implode(", ", $this->genresArray);
+    echo $genreString;
+  }
 }
 
 //* INVOCARE attributi/variabili d’istanza
@@ -200,17 +206,18 @@ $movies = [
     <h1>Marvel Movies</h1>
   </header>
 
-  <div class="container d-flex flex-wrap align-items-center my-5">
+  <div class="container d-flex flex-wrap align-items-start my-5">
 
     <?php foreach ($movies as $movie) : ?>
       <!-- //* stampare con un ciclo foreach -->
       <div class="text-black my-3 ms-4 me-4" style="width: 275px;">
-        <div class="card">
+        <div class="card" style="min-height: 575px;">
           <img src="<?php $movie->getPoster() ?>" class="card-img-top" alt="<?php $movie->getTitle() ?>" style="height: 405px;">
           <div class="card-body">
             <h5 class="card-title"><?php $movie->getTitle() ?></h5>
-            <p class="card-text mb-2">Durata: <?php $movie->getFilmDuration() ?></p>
-            <p class="card-text ">Anno: <?php $movie->getYear() ?></p>
+            <p class="card-text mb-1">Durata: <?php $movie->getFilmDuration() ?></p>
+            <p class="card-text mb-1">Anno: <?php $movie->getYear() ?></p>
+            <p class="card-text ">Genere: <?php $movie->getGenre() ?></p>
           </div>
         </div>
       </div>
