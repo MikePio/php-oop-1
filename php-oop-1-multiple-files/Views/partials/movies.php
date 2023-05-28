@@ -7,8 +7,9 @@
         <img src="<?php $movie->getPoster() ?>" class="card-img-top" alt="<?php $movie->getTitle() ?>" style="height: 405px;">
         <div class="card-body">
           <h5 class="card-title"><?php $movie->getTitle() ?></h5>
-          <p class="card-text mb-2">Durata: <?php $movie->getFilmDuration() ?></p>
-          <p class="card-text ">Anno: <?php $movie->getYear() ?></p>
+          <p class="card-text mb-1">Durata: <?php $movie->getFilmDuration() ?></p>
+          <p class="card-text mb-1">Anno: <?php $movie->getYear() ?></p>
+          <p class="card-text ">Genere: <?php $movie->getGenreName() ?></p>
         </div>
       </div>
     </div>
