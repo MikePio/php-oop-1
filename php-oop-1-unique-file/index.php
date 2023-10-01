@@ -196,14 +196,16 @@ $movies = [
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- BOOTSTRAP -->
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css' integrity='sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==' crossorigin='anonymous' />
+  <!-- font-awesome -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' integrity='sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==' crossorigin='anonymous'/>
   <title>PHP OOP-1</title>
 </head>
 
 <body class="bg-white text-white">
   <!-- <body class="bg-dark text-white"> -->
 
-  <header class="bg-dark text-white text-center py-5">
-    <h1>Marvel Movies</h1>
+  <header class="bg-dark text-white text-center">
+    <h1 class="py-5" style="background-color: rgba(0, 0, 0, 0.2) !important;">Marvel Movies</h1>
   </header>
 
   <div class="container d-flex flex-wrap align-items-start my-5">
@@ -246,11 +248,43 @@ $movies = [
   </div> -->
 
 
-  <footer class="bg-dark text-white text-center py-5">
-    <a href="https://github.com/MikePio" style="color:white;">
-      <div>By MikePi</div>
-    </a>
-  </footer>
+  <footer class="bg-dark text-center text-white">
+
+<!-- Grid container -->
+<div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+
+<!-- 
+  <a class="btn btn-outline-light btn-floating m-1 rounded-circle" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+
+  <a class="btn btn-outline-light btn-floating m-1 rounded-circle" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+
+  <a class="btn btn-outline-light btn-floating m-1 rounded-circle" href="#!" role="button"><i class="fab fa-google"></i></a> 
+-->
+  
+        <!-- Instagram -->
+        <a class="btn btn-outline-light btn-floating m-1 rounded-circle"
+            href="https://www.instagram.com/michelepiopilla/" role="button"><i class="fab fa-instagram"></i></a>
+
+        <!-- Linkedin -->
+        <a class="btn btn-outline-light btn-floating m-1 rounded-circle" href="https://www.linkedin.com/in/michele-pilla/" role="button"><i
+                class="fab fa-linkedin-in"></i></a>
+
+        <!-- Github -->
+        <a class="btn btn-outline-light btn-floating m-1 rounded-circle" href="https://github.com/MikePio"
+            role="button"><i class="fab fa-github"></i></a>
+
+    </section>
+    <!-- Section: Social media -->
+</div>
+
+<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2023 By
+    <a class="text-white" href="https://github.com/MikePio">@MikePio</a>
+</div>
+
+</footer>
 
 
 

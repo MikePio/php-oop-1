@@ -4,7 +4,7 @@
     <!-- //* stampare con un ciclo foreach -->
     <div class="text-black my-3 ms-4 me-4" style="width: 275px;">
       <!-- <div class="card" style="min-height: 621px;"> --> <!-- //* con lista (li) senza span  -->
-      <div class="card"> <!-- //* con span senza lista (li)  -->
+      <div class="card" style="min-height: 575px;"> <!-- //* con span senza lista (li)  -->
         <img src="<?php $movie->getPoster() ?>" class="card-img-top" alt="<?php $movie->getTitle() ?>" style="height: 405px;">
         <div class="card-body">
           <h5 class="card-title"><?php $movie->getTitle() ?></h5>
